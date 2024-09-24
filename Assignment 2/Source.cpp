@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
+#include <cstring>
 #include <string>
 #include <vector>
 using namespace std;
@@ -32,8 +33,11 @@ int main() {
 		students.push_back(student);
 	}
 
-
-
-
+	// DEBUG MODE TESTING
+	#ifdef _DEBUG
+		for (int i = 0; i < students.size(); i++) {
+			cout << students.at(i).firstname << "," << students.at(i).lastname << endl;
+		}
+	#endif
 	return 1;
 }
