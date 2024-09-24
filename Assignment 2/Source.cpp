@@ -6,7 +6,7 @@
 #include <vector>
 using namespace std;
 
-#define PRE_RELEASE
+//#define PRE_RELEASE
 
 struct STUDENT_DATA {
 	std::string firstname;
@@ -50,7 +50,10 @@ int main() {
 		STUDENT_DATA student;
 		student.firstname = new_strings[0];
 		student.lastname = new_strings[1];
-		student.email = new_strings[2];
+
+		#ifdef PRE_RELEASE 
+			student.email = new_strings[2];
+		#endif;
 
 		// Push the object into a vector object of the same type
 		students.push_back(student);
